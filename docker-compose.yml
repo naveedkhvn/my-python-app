@@ -1,0 +1,14 @@
+services: 
+  web: 
+    build: . 
+    ports: 
+      - "5000:5000" 
+    depends_on: 
+      - db 
+    environment: 
+      - DATABASE_URL=postgresql://postgres:password123@db:5432/mydb 
+  db: 
+    image: postgres 
+    environment: 
+      POSTGRES_PASSWORD: password123 
+      POSTGRES_DB: mydb
