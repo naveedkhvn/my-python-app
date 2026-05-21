@@ -18,7 +18,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install flask pytest
+        run: pip install flask pytest psycopg2-binary
 
       - name: Run tests
         run: pytest test_app.py -v
